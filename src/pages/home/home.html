@@ -1,0 +1,20 @@
+<template>
+  <require from='../../components/nav-bar.html'></require>
+  <require from='../about/about.html'></require>
+  <require from='../service/service.html'></require>
+
+
+  <nav-bar router.bind="router"></nav-bar>
+
+  <div id="home" class="home">
+    <div class="text-vcenter">
+      <h1>${title}</h1>
+      <h3>${subTitle}</h3>
+      <a href="#contact" class="btn btn-default btn-lg">Contact Us</a>
+    </div>
+  </div>
+  
+  <about module.bind="about.js"></about>
+  
+  <service module.bind="service.js"></service>
+</template>
