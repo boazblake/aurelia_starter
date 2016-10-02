@@ -260,7 +260,7 @@ html, body {
   background-color: #306d9f;
   color: #ffffff;
 }
-#services .glyphicon {
+#services .fa {
   border: 2px solid #FFFFFF;
   border-radius: 50%;
   display: inline-block;
@@ -294,10 +294,10 @@ html, body {
 #footer {
   padding: 20px 0;
 }
-#footer .glyphicon {
+#footer .fa {
   color: #333333;
   font-size: 10px;
 }
-#footer .glyphicon:hover {
+#footer .fa:hover {
   color: #306d9f;
 }

@@ -1,6 +1,4 @@
-import { bindable } from 'aurelia-framework'
-
 export class AwSplash {
-  @bindable awTitle = "Title";
-    @bindable subTitle= "Sub Title";
+ awTitle = "Title";
+ subTitle= "Sub Title";
 }
