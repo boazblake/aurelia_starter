@@ -5,14 +5,13 @@
             <div repeat.for="infoTextBlock of infoTextBlocks" class="col-sm-6">
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h2 class="panel-title">${title}</h2>
+                  <h2 class="panel-title">${infoTextBlock.title}</h2>
                 </div>
                 <div class="panel-body lead">
-                  ${subTitle} 
+                  ${infoTextBlock.subTitle} 
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 </template>

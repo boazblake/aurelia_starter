@@ -70,3 +70,8 @@
 
 
 //     let showMessageContainer = (this.state.showMessageContainer) ? "container-fluid one-half column opacityON" : "container-fluid one-half column opacityOFF";
+
+export class Contact {
+  
+}
+

@@ -4,11 +4,10 @@
       <h2 class="text-center">Our Services</h2> <hr />
       <div class="row text-center">
         <div repeat.for="service of services" class="col-sm-3 col-xs-6">
-          <i class="fa fa-${service.icon}"> </i>
+          <i class="fa fa-${service.icon}" font-size="50px"> </i>
           <h4>${service.name}</h4>
-          <p>${subText}</p>
+          <p>${service.subText}</p>
         </div>
       </div>
     </div>
-  </div>
 </template>
