@@ -55,6 +55,15 @@ section {
   margin: 12px 24px 0 6px;
 }
 
+.navbar-default {
+  background-color: #e01111;
+}
+
+.navbar-default li:hover {
+  size: 2em;
+}
+
+
 .pictureDetail {
   max-width: 425px;
 }
@@ -217,9 +226,23 @@ html, body {
   color: black;
 }
 
-.navbar .navbar-log:hover {
+.navbar .navbar-logo:hover {
   cursor:pointer;
 }
+
+#navbar, .navbar, .navbar-default, .navbar-fixed-top {
+  background-color: transparent;
+}
+
+#navbar{border-color: none;}
+
+/* 
+#navbar,
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+  background-color: rgba(52, 73, 94,0.8);
+} */
 
 .loginView {
   position:absolute;
