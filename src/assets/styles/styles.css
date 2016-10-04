@@ -1,5 +1,8 @@
 body {
-  margin: 0;
+}
+
+body a:hover, a:visited, a:link, a:active{
+  text-decoration: none;
 }
 
 .splash {
@@ -185,6 +188,7 @@ This stylesheet and the associated (x)html may be modified in any way to fit you
 /* general styles */
 html, body {
   height: 100%;
+  margin: 0;
   width: 100%;
 }
 
@@ -209,8 +213,12 @@ html, body {
 }
 
 .navbar-logo{
-  width: 1em;
+  height: 1.5em;
   color: black;
+}
+
+.navbar .navbar-log:hover {
+  cursor:pointer;
 }
 
 .loginView {
@@ -239,18 +247,14 @@ html, body {
 #home {
   background: url(https://static.pexels.com/photos/1660/art-creative-metal-creativity.jpg) no-repeat center center fixed;
   display: table;
-  color:white;
-  height: 1000px;
+  color:#fafafa;
+  height: 90vh;
   position: relative;
   width: 100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
-
-.text-vcenter h1 {
-  padding-top:5%; 
 }
 
 #about {
@@ -275,7 +279,7 @@ html, body {
 #information {
   background: url(https://static.pexels.com/photos/29047/pexels-photo-29047.jpg) no-repeat center center fixed; 
   display: table;
-  height: 800px;
+  height: 90vh;
   position: relative;
   width: 100%;
   -webkit-background-size: cover;
