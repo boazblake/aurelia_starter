@@ -10,6 +10,5 @@ export class App {
     );
 
     this.router = router;
-    console.log(router)
   }
 }
