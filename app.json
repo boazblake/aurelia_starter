@@ -1,0 +1,24 @@
+{
+  "name": "aurelia_webpack_spa",
+  "scripts": {
+  },
+  "env": {
+    "GITHUB_AUTH_TOKEN": "30d134c15f02466d14c1bccf8011f85e608f3773"
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/timshadel/heroku-buildpack-github-netrc.git"
+    },
+    {
+      "url": "https://git.heroku.com/aurelia-webpack-skel.git"
+    }
+  ]
+}
