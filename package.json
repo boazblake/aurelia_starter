@@ -31,7 +31,8 @@
     "build:prod": "cross-env NODE_ENV=production npm run webpack -- --progress --profile",
     "start": "npm run server:dev",
     "server": "npm run server:dev",
-    "server:dev": "cross-env NODE_ENV=development node ./node_modules/webpack-dev-server/bin/webpack-dev-server --inline --progress --profile --watch",
+    "server:dev": "cross-env NODE_ENV=development node ./node_modules/webpack-dev-server/bin/webpack-dev-server --inline --profile --watch",
+    "server:dev2": "cross-env NODE_ENV=development node ./node_modules/webpack-dev-server/bin/webpack-dev-server --inline --profile --watch",
     "server:dev:hmr": "npm run server:dev -- --hot",
     "server:prod": "http-server dist --cors",
     "webpack": "cross-env ./node_modules/.bin/webpack",
@@ -131,7 +132,7 @@
     "protractor": "^4.0.0",
     "rimraf": "^2.5.4",
     "wait-on": "^1.5.2",
-    "webpack": "2.1.0-beta.22",
+    "webpack": "2.1.0-beta.25",
     "webpack-dev-server": ">=2.1.0-beta.0 || ^2.1.0"
   },
   "babel": {
