@@ -29,7 +29,7 @@
     "build:dev": "cross-env NODE_ENV=development npm run webpack -- --progress --profile",
     "prebuild:prod": "npm run clean:dist",
     "build:prod": "cross-env NODE_ENV=production npm run webpack -- --progress --profile",
-    "start": "npm run server:dev",
+    "dev": "npm run server:dev",
     "server": "npm run server:dev",
     "server:dev": "cross-env NODE_ENV=development node ./node_modules/webpack-dev-server/bin/webpack-dev-server --inline --profile --watch",
     "server:dev2": "cross-env NODE_ENV=development node ./node_modules/webpack-dev-server/bin/webpack-dev-server --inline --profile --watch",

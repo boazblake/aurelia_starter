@@ -1,4 +1,5 @@
 const resources = [
+'./smoothscroll.js'
 ]
 
 export function configure(aurelia) {

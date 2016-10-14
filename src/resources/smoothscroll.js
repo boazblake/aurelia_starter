@@ -1,4 +1,4 @@
-export function smoothScroll(){
+export default function smoothScroll(){
     //SMOOTH SCROLLING EFFECT
 $(function() {
   $('a[href*="#"]:not([href="#"])').click(function() {
@@ -14,4 +14,4 @@ $(function() {
     }
   })
 })
-}
+};

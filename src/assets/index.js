@@ -1,7 +1,5 @@
 const resources =
-  [ './images/img-not-found.png' 
-  , './images/navbar-logo.svg'
-  ]
+  [ './images/img-not-found.png' ]
 
   export function configure(aurelia) {
     aurelia.globalResources(resources)

@@ -18,8 +18,6 @@ export async function configure(aurelia) {
   .feature('components')
   .feature('pages')
   .feature('assets')
-  .feature('resources')
-  .feature('resources/temp')
   .plugin('aurelia-mdl-plugin')
   ;
 
