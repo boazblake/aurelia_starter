@@ -11,6 +11,7 @@ Bluebird.config({ warnings: false });
 
 export async function configure(aurelia) {
   aurelia.use
+  .developmentLogging()
   .standardConfiguration()
   .history()
   .router()

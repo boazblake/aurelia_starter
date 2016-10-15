@@ -1,21 +1,19 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%- htmlWebpackPlugin.options.title %></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <base href="<%- htmlWebpackPlugin.options.baseUrl %>">
-    <!-- imported CSS are concatenated and added automatically -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no">
-  </head>
-  <body aurelia-app="main">
-    <div class="splash">
-      <div class="message"><%- htmlWebpackPlugin.options.title %></div>
-      <i class="fa fa-spinner fa-spin"></i>
-    </div>
-    <% if (process.env.ENV === 'development') { %>
-    <!-- Webpack Dev Server reload -->
-    <script src="/webpack-dev-server.js"></script>
-    <% } %>
-  </body>
-</html>
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Aurelia Starter Kit</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <base href="/">
+      <!-- imported CSS are concatenated and added automatically -->
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="format-detection" content="telephone=no">
+    </head>
+    <body aurelia-app="assets/js/main">
+      <div class="splash">
+        <div class="message">Aurelia Starter Kit</div>
+        <i class="fa fa-spinner fa-spin"></i>
+      </div>
+      <!-- Uncomment below line for Webpack Dev Server auto reload -->
+      <script src="/webpack-dev-server.js"></script>
+    </body>
+  </html>
