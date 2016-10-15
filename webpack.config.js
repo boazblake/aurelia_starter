@@ -1,4 +1,4 @@
-  const path = require('path');
+const path = require('path');
   const webpack = require('webpack');
   const HtmlWebpackPlugin = require('html-webpack-plugin');
   const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -75,7 +75,10 @@
               {
                   test: /\.html$/,
                   exclude: /index\.html$/, // index.html will be taken care by HtmlWebpackPlugin
-                  use: 'html-loader'
+                  use: [
+                      'raw-loader',
+                      'html-minifier-loader'
+                  ]
               },
               {
                   test: /\.css$/, 
@@ -139,17 +142,33 @@
           new webpack.optimize.CommonsChunkPlugin({
               name: ['aurelia', 'aurelia-bootstrap']
           }),
+          new webpack.LoaderOptionsPlugin({
+              options: {
+                  context: __dirname,
+                  'html-minifier-loader': {
+                      removeComments: true, // remove all comments
+                      collapseWhitespace: true, // collapse white space between block elements (div, header, footer, p etc...)
+                      collapseInlineTagWhitespace: true, // collapse white space between inline elements (button, span, i, b, a etc...)
+                      collapseBooleanAttributes: true, // <input required="required"/> => <input required />
+                      removeAttributeQuotes: true, // <input class="abcd" /> => <input class=abcd />
+                      minifyCSS: true, // <input style="display: inline-block; width: 50px;" /> => <input style="display:inline-block;width:50px;"/>
+                      minifyJS: true, // same with CSS but for javascript
+                      removeScriptTypeAttributes: true, // <script type="text/javascript"> => <script>
+                      removeStyleLinkTypeAttributes: true // <link type="text/css" /> => <link />
+                  }
+              }
+          }),
           new webpack.DefinePlugin({
-            '__DEV__': true,
-            'ENV': JSON.stringify(metadata.ENV),
-            'HMR': metadata.HMR,
-            'process.env': {
-                'ENV': JSON.stringify(metadata.ENV),
-                'NODE_ENV': JSON.stringify(metadata.ENV),
-                'HMR': metadata.HMR,
-                'WEBPACK_HOST': JSON.stringify(metadata.host),
-                'WEBPACK_PORT': JSON.stringify(metadata.port)
-            }
+              '__DEV__': true,
+              'ENV': metadata.ENV,
+              'HMR': metadata.HMR,
+              'process.env': {
+                  'ENV': metadata.ENV,
+                  'NODE_ENV': metadata.ENV,
+                  'HMR': metadata.HMR,
+                  'WEBPACK_HOST': metadata.host,
+                  'WEBPACK_PORT': metadata.port
+              }
           })
       ].concat(DEBUG ? [
 
