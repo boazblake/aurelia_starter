@@ -179,7 +179,5 @@
                 aggregateTimeout: 300,
                 poll: 1000
             },
-            progress: true,
-            outputPath: outDir
         }
     };
