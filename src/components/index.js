@@ -1,6 +1,6 @@
-const resources = 
-  [ './aw-blur-image'
-  , './aw-footer'
+const resources =
+  [ './blur-image'
+  , './footer'
   , './nav-bar.html'
 
   ]

@@ -1,4 +1,0 @@
-export class AwHome {
-  constructor(){
-  }
-}

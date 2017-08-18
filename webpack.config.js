@@ -42,7 +42,7 @@
 
     module.exports = {
         entry: {
-            app: ['./src/assets/js/main'], // <-- this array will be filled by the aurelia-webpack-plugin
+            app: [], // <-- this array will be filled by the aurelia-webpack-plugin
             aurelia: aureliaModules
         },
         output: {
