@@ -1,7 +1,7 @@
 const resources =
   [ './blur-image'
   , './footer'
-  , './nav-bar.html'
+  , './nav-bar'
 
   ]
 

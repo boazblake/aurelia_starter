@@ -1,5 +1,5 @@
-<template bindable="router">
-  <nav class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation">
+<template bindable="router" >
+  <nav class="navbar navbar-default navbar-fixed-top" id="navbar" role="navigation" >
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#skeleton-navigation-navbar-collapse">
         <span class="sr-only">Toggle Navigation</span>
@@ -7,16 +7,18 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="http://aurelia.io/">
+      <a class="navbar-brand" href="">
         <img src="https://cdn.auth0.com/blog/aurelia-logo.png" class="navbar-logo" alt="">
-        <!-- <span>${router.title}</span> -->
+        <span>${router.title}</span>
       </a>
+      <button click.delegate="logout()">LOGOUT</button>
+
     </div>
 
-    <div class="collapse navbar-collapse" id="skeleton-navigation-navbar-collapse">
+    <div class="collapse navbar-collapse" id="skeleton-navigation-navbar-collapse" show.bind="authStatus" >
       <ul class="nav navbar-nav">
         <li repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">
-          <a class="mdl-button mdl-js-button mdl-button--primary" data-toggle="collapse" 
+          <a class="mdl-button mdl-js-button mdl-button--primary" data-toggle="collapse"
           data-target="#skeleton-navigation-navbar-collapse.in" href.bind="row.href">${row.title}</a>
         </li>
       </ul>

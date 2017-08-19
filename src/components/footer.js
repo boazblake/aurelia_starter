@@ -1,3 +1,3 @@
-export class AwFooter {
+export class Footer {
   boaz = "<BoazBlake/>"
 }

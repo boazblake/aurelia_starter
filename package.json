@@ -74,6 +74,7 @@
     "aurelia-fetch-client": "^1.0.0",
     "aurelia-framework": "^1.0.0",
     "aurelia-history-browser": "^1.0.0",
+    "aurelia-http-client": "^1.0.2",
     "aurelia-loader-webpack": "^1.0.0",
     "aurelia-logging-console": "^1.0.0",
     "aurelia-mdl-plugin": "^0.1.12",
@@ -86,10 +87,13 @@
     "aurelia-templating-router": "^1.0.0",
     "bluebird": "^3.4.1",
     "bootstrap": "^3.3.7",
+    "daggy": "^1.2.0",
+    "data.task": "^3.1.1",
     "font-awesome": "^4.6.3",
     "isomorphic-fetch": "^2.2.1",
     "jquery": "^3.1.1",
-    "material-design-lite": "^1.2.1"
+    "material-design-lite": "^1.2.1",
+    "ramda": "^0.24.1"
   },
   "devDependencies": {
     "aurelia-tools": "^0.2.4",

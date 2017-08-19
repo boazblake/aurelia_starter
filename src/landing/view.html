@@ -1,0 +1,14 @@
+<template>
+
+  <form role="form">
+    <label for="email">E-mail</label>
+    <input type="text" value.bind="_user.email" placeholder="Email">
+
+    <label for="password">Password</label>
+    <input type="password" value.bind="_user.password" placeholder="Password">
+
+    <button  click.delegate="register()">REGISTER</button>
+    <button  click.delegate="login()">LOGIN</button>
+  </form>
+
+</template>

@@ -1,22 +1,31 @@
-export class App {
-  configureRouter(config, router) {
-    config.title = 'Aurelia Starter';
-    config.map(
-      [ { route: ['', 'default']
-        , name: 'default'
-        , moduleId: 'pages/default/view.html'
-        , nav: true
-        , title: 'LOGOUT'
-        }
-      , { route: ['home']
-        , name: 'home'
-        , moduleId: 'pages/home/view.html'
-        , nav: false
-        , title: 'HomePage'
-        }
-      ]
-    );
 
-    this.router = router;
+const routes =
+  [ { route: ['home']
+    , name: 'home'
+    , moduleId: 'home/component'
+    , nav: false
+    , title:'home'
+    }
+  , { route: ['']
+    , nav: false
+    , redirect: 'home'
+    }
+  ]
+
+export class App {
+  constructor() {
+    this.style = 'style'
+  }
+
+  configureRouter(config, router) {
+    config.title = 'Home'
+
+    config.pushState = false
+
+    config.map(routes)
+
+    config.mapUnknownRoutes(() => 'home/component')
+
+    this.router = router
   }
 }

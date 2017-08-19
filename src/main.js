@@ -19,7 +19,6 @@ export async function configure(aurelia) {
   .feature('components')
   .feature('assets')
   .plugin('aurelia-mdl-plugin')
-  ;
 
 
   // Uncomment the line below to enable animation.

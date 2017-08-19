@@ -52,7 +52,12 @@
             chunkFilename: DEBUG ? '[id].chunk.js' : '[id].[chunkhash].chunk.js'
         },
         resolve: {
-            modules: [path.resolve(), 'node_modules']
+            modules: [path.resolve(), 'node_modules'],
+            alias:
+              { 'utilities': path.resolve(__dirname, 'src/utilities/')
+              , 'authConfig': path.resolve(__dirname, 'src/authConfig/index.js')
+              , 'fa': 'font-awesome/css/font-awesome.css'
+              }
         },
         module: {
             rules: [
