@@ -1,3 +1,16 @@
 <template>
-  ITEM
+  <fieldset>
+    <label for="firstName">firstName</label>
+    <input type="text" name="firstName" value.bind="item.firstName" >
+  </fieldset>
+
+  <fieldset>
+    <label for="lastName">lastName</label>
+    <input type="text" name="lastName" value.bind="item.lastName">
+  </fieldset>
+
+  <img src="${item.image}" >
+
+  <button if.bind="id" type="button" name="DELETE" click.delegate="delete()">X</button>
+  <button type="button" name="DELETE" click.delegate="save()">SAVE</button>
 </template>
