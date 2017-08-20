@@ -1,6 +1,6 @@
 import { customElement, useView, inject } from 'aurelia-framework'
 import { EventAggregator } from 'aurelia-event-aggregator'
-import {HttpClient, json } from 'aurelia-http-client'
+import { HttpClient, json } from 'aurelia-http-client'
 import { checkAuth } from 'authConfig'
 import { userModel, registerTask, loginTask } from './model'
 import { map } from 'ramda'
