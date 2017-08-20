@@ -1,7 +1,8 @@
 import { customElement, useView, inject } from 'aurelia-framework'
 import { EventAggregator } from 'aurelia-event-aggregator'
 import { HttpClient } from 'aurelia-http-client'
-import { getCollectionTask } from './model'
+import { getItemTask } from './model'
+import { log } from 'utilities'
 
 @customElement('item.edit')
 @useView('./view.html')
@@ -20,7 +21,7 @@ export class Item {
   }
 
   activate(params, routeConfig, navigationInstruction) {
-
+    this.id = params.id
   }
 
   created(owningView, myView) {
@@ -32,7 +33,11 @@ export class Item {
   }
 
   attached() {
-  //fetch item
+    const onError = E => log('ERROR')(E)
+    const onSuccess = data =>
+      log('data')(data)
+
+    getItemTask(this.http)(this.id).fork(onError, onSuccess)
   }
 
   canDeactivate() {
