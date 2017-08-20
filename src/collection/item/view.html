@@ -1,15 +1,22 @@
 <template>
   <fieldset>
     <label for="firstName">firstName</label>
-    <input type="text" name="firstName" value.bind="item.firstName" >
+    <input type="text" name="firstName" value.bind="state.item.firstName" >
   </fieldset>
 
   <fieldset>
     <label for="lastName">lastName</label>
-    <input type="text" name="lastName" value.bind="item.lastName">
+    <input type="text" name="lastName" value.bind="state.item.lastName">
   </fieldset>
 
-  <img src="${item.image}" >
+  <img src="${state.item.image}" click.delegate="image()">
+
+  <input type="file" accept="image/*" files.bind="selectedFiles">
+    <div repeat.for="file of selectedFiles | fileListToArray">
+      <h1>${file.name}: ${file.type} ${file.size / 1000} kb</h1>
+      <img src.bind="file | blobToUrl" max-width="20%"><img>
+      Last Modified: ${file.lastModifiedDate}
+    </div>
 
   <button if.bind="id" type="button" name="DELETE" click.delegate="delete()">X</button>
   <button type="button" name="DELETE" click.delegate="save()">SAVE</button>

@@ -20,6 +20,12 @@ const routes =
     , nav: false
     , title: 'edit'
     }
+  , { route: 'collection/item/add'
+    , name: 'item.add'
+    , moduleId: 'collection/item/component'
+    , nav: true
+    , title: 'add'
+    }
   , { route: ['']
     , nav: false
     , redirect: 'landing'

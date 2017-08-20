@@ -5,23 +5,24 @@ import { log } from "utilities"
 
 // // ==== POST ==================================================================
 export const post = http => data =>
-  http.put('http://localhost:8080/items/add', data)
+  http.post('http://localhost:8080/items/add', data)
 
 export const postTask = http => data =>
   new Task((rej, res) => post(http)(data).then(res, rej))
 
-export const toRequest = item => image =>{
+export const toRequest = item =>{
+  console.log('item', item)
     let Dto =
       { firstName: item.firstName
       , lastName: item.lastName
-      , image: image
+      , image: item.image
       }
     return Dto
   }
 
-export const addTask = item =>
-  compose(postTask
-         , toRequest(item))
+export const addTask = http =>
+  compose(map(identity(dto => JSON.parse(dto.response))),postTask(http)
+         , toRequest)
 
 // ==== GET ==================================================================
 export const getItem = http => id =>

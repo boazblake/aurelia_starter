@@ -2,7 +2,7 @@ import { customElement, useView, inject } from 'aurelia-framework'
 import { EventAggregator } from 'aurelia-event-aggregator'
 import { Router } from 'aurelia-router'
 import { HttpClient } from 'aurelia-http-client'
-import { getItemTask, editTask, deleteTask } from './model'
+import { getItemTask, editTask, deleteTask, addTask } from './model'
 import { log } from 'utilities'
 
 @customElement('item.edit')
@@ -12,7 +12,10 @@ export class Item {
   constructor(http, emitter, router) {
     this.disposables = new Set()
     this.data = {}
-    this.state = {}
+    this.state = {
+      item: {},
+      image: 'https://ak2.picdn.net/shutterstock/videos/816607/thumb/1.jpg'
+    }
     this.http = http
     this.emitter = emitter
     this.router = router
@@ -24,20 +27,29 @@ export class Item {
 
   attached() {
     const onError = E => log('ERROR')(E)
-    const onSuccess = data =>
-      this.item = data
+    const onSuccess = data => {
+      console.log(data)
+      this.state.item = data
+      this.id
+      ? this.state.image = this.state.item.image
+      : this.state.item.image = this.state.image
+    }
 
     getItemTask(this.http)(this.id).fork(onError, onSuccess)
   }
 
   save() {
+    if (this.selectedFiles) {
+      createDto(this.state.item)(this.selectedFiles)
+    }
+
     const onError = e => log('e')(e)
     const onSuccess = data =>
       log('data')(data)
 
     this.id
-    ? editTask(this.http)(this.id)(this.item).fork(onError, onSuccess)
-    : addTask(this.http)(this.item).fork(onError, onSuccess)
+    ? editTask(this.http)(this.id)(this.state.item).fork(onError, onSuccess)
+    : addTask(this.http)(this.state.item).fork(onError, onSuccess)
   }
 
   delete() {
@@ -48,4 +60,9 @@ export class Item {
     }
     deleteTask(this.http)(this.id).fork(onError, onSuccess)
   }
+
+  image() {
+
+  }
+
 }

@@ -17,6 +17,7 @@ export async function configure(aurelia) {
   .router()
   .eventAggregator()
   .feature('components')
+  .feature('valueConverters')
   .feature('assets')
   .plugin('aurelia-mdl-plugin')
 
