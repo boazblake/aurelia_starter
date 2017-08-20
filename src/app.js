@@ -20,7 +20,7 @@ export class App {
   configureRouter(config, router) {
     config.title = 'Home'
 
-    config.pushState = false
+    // config.pushState = true
 
     config.map(routes)
 

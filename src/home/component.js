@@ -13,6 +13,13 @@ const routes =
     , nav: true
     , title: 'collection'
     }
+  , { route: 'collection/item/:id/edit'
+    , name: 'item.edit'
+    , href: 'item.edit'
+    , moduleId: 'collection/item/component'
+    , nav: false
+    , title: 'edit'
+    }
   , { route: ['']
     , nav: false
     , redirect: 'landing'

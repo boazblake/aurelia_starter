@@ -2,7 +2,6 @@ import { useView, inject, bindable } from 'aurelia-framework'
 import { HttpClient } from 'aurelia-http-client'
 import { checkAuth } from 'authConfig'
 import { EventAggregator } from 'aurelia-event-aggregator'
-import { log } from 'utilities'
 
 @inject(HttpClient, EventAggregator)
 export class NavBar {
@@ -16,8 +15,6 @@ export class NavBar {
   attached() {
     const handler = authStatus =>{
       this.authStatus = authStatus
-      log('authStatus')(authStatus)
-      console.log(this.router.navigation.forEach(x => console.log(x)))
     }
 
     this.emitter.subscribe('auth', handler )

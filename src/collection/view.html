@@ -1,3 +1,7 @@
 <template >
-  collection
+  <div class="container">
+    <div repeat.for="item of _collection" class="collection.item">
+      <a class="mdl-button mdl-js-button mdl-button--primary" route-href="route:item.edit; params.bind:{id:item._id}" >${item.firstName} ${item.lastName}</a>
+    </div>
+  </div>
 </template>

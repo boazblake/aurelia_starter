@@ -24,13 +24,13 @@ export class Landing {
     const onError = error =>
       console.log('ERROR', error)
 
-    const onSucces = data => {
+    const onSuccess = data => {
       localStorage.setItem('userId', JSON.stringify(data.userId))
       if ( checkAuth() ) this.emitter.publish('auth', true)
     }
 
 
-    loginTask(this.http)(this.user).fork(onError, onSucces)
+    loginTask(this.http)(this.user).fork(onError, onSuccess)
   }
 
   register() {
@@ -39,14 +39,14 @@ export class Landing {
     const onError = error =>
       console.log('ERROR', error)
 
-    const onSucces = data => {
+    const onSuccess = data => {
       localStorage.setItem('userId', JSON.stringify(data.userId))
       console.log('SUCESS', data)
     }
 
     console.log(this.user)
 
-    registerTask(this.http)(this.user).fork(onError, onSucces)
+    registerTask(this.http)(this.user).fork(onError, onSuccess)
   }
 
 }
